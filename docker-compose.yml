@@ -6,4 +6,4 @@ services:
     volumes:
       - /home/robot-ranger/development/process-robotics/workspace/cppagent-rest-client:/local
     # command: ls -la
-    command: generate -i http://192.168.0.224:5000/swagger -l python -o /local -DpackageName=cppagent
+    command: generate -i /local/swagger.json -l python -o /local -DpackageName=mtconnect

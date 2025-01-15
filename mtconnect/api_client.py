@@ -22,9 +22,9 @@ import tempfile
 import six
 from six.moves.urllib.parse import quote
 
-from cppagent.configuration import Configuration
-import cppagent.models
-from cppagent import rest
+from mtconnect.configuration import Configuration
+import mtconnect.models
+from mtconnect import rest
 
 
 class ApiClient(object):
@@ -257,7 +257,7 @@ class ApiClient(object):
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(cppagent.models, klass)
+                klass = getattr(mtconnect.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

@@ -1,4 +1,4 @@
-# cppagent.DefaultApi
+# mtconnect.DefaultApi
 
 All URIs are relative to *http://172.18.0.4:5000/*
 
@@ -54,12 +54,12 @@ Marks the asset as removed and creates an AssetRemoved event
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 
 try:
@@ -101,12 +101,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -152,12 +152,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -203,12 +203,12 @@ Returns a set of assets identified by asset ids `asset` separated by semi-colon 
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_ids = 'asset_ids_example' # str | Semi-colon (;) separated list of assetIds
 
 try:
@@ -250,12 +250,12 @@ Device and type are optional. If they are not given, it assumes there is no cons
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -299,12 +299,12 @@ Returns up to `count` assets
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device = 'device_example' # str | Device UUID or name (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
@@ -354,12 +354,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -403,12 +403,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -452,12 +452,12 @@ Marks the asset as removed and creates an AssetRemoved event
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 
 try:
@@ -499,12 +499,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -550,12 +550,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_id = 'asset_id_example' # str | An assetId to select
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -601,12 +601,12 @@ Returns a set assets identified by asset ids `asset` separated by semi-colon (;)
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 asset_ids = 'asset_ids_example' # str | Semi-colon (;) separated list of assetIds
 
 try:
@@ -648,12 +648,12 @@ Device and type are optional. If they are not given, it assumes there is no cons
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -697,12 +697,12 @@ Returns up to `count` assets
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device = 'device_example' # str | Device UUID or name (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
@@ -752,12 +752,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -801,12 +801,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name (optional)
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -850,12 +850,12 @@ Gets a stapshot of the state of all the observations for all devices optionally 
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 at = 56 # int | Sequence number at which the observation snapshot is taken (optional)
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 interval = 789 # int | Time in ms between publishing data–starts streaming (optional)
@@ -905,12 +905,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 asset_id = 'asset_id_example' # str | An assetId to select
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -956,12 +956,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 asset_id = 'asset_id_example' # str | An assetId to select
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -1007,12 +1007,12 @@ Device and type are optional. If they are not given, it assumes there is no cons
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1056,12 +1056,12 @@ Returns up to `count` assets for deivce `device`
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device = 'device_example' # str | Device UUID or name (optional)
@@ -1113,12 +1113,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1162,12 +1162,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1211,12 +1211,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 asset_id = 'asset_id_example' # str | An assetId to select
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -1262,12 +1262,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 asset_id = 'asset_id_example' # str | An assetId to select
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
@@ -1313,12 +1313,12 @@ Device and type are optional. If they are not given, it assumes there is no cons
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1362,12 +1362,12 @@ Returns up to `count` assets for deivce `device`
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device = 'device_example' # str | Device UUID or name (optional)
@@ -1419,12 +1419,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1468,12 +1468,12 @@ Updates or adds an asset with the asset XML in the body
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 type = 'type_example' # str | Only include assets of type `type` in the results (optional)
 
@@ -1517,12 +1517,12 @@ Gets a stapshot of the state of all the observations for device `device` optiona
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 at = 56 # int | Sequence number at which the observation snapshot is taken (optional)
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
@@ -1574,12 +1574,12 @@ Provides metadata service for the MTConnect Devices information model for device
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
@@ -1625,12 +1625,12 @@ The data of the POST contains the dataItem=value observation data
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 time = 'time_example' # str |  (optional)
 
@@ -1674,12 +1674,12 @@ Provides metadata service for the MTConnect Devices information model for device
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
@@ -1725,12 +1725,12 @@ The data of the PUT contains the dataItem=value observation data
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 time = 'time_example' # str |  (optional)
 
@@ -1774,12 +1774,12 @@ Gets a time series of at maximum `count` observations for device `device` option
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device = 'device_example' # str | Device UUID or name
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
@@ -1837,12 +1837,12 @@ Provides metadata service for the MTConnect Devices information model for all de
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
 
@@ -1886,12 +1886,12 @@ Provides metadata service for the MTConnect Devices information model for all de
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 pretty = false # bool | Instructs the result to be pretty printed (optional) (default to false)
 
@@ -1935,12 +1935,12 @@ Gets a time series of at maximum `count` observations for all devices optionally
 ```python
 from __future__ import print_function
 import time
-import cppagent
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = cppagent.DefaultApi()
+api_instance = mtconnect.DefaultApi()
 count = 100 # int | Maximum number of entities to include in results (optional) (default to 100)
 device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
 _from = 56 # int | Sequence number at to start reporting observations (optional)

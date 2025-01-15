@@ -15,8 +15,8 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from cppagent.api.default_api import DefaultApi
+from mtconnect.api.default_api import DefaultApi
 # import ApiClient
-from cppagent.api_client import ApiClient
-from cppagent.configuration import Configuration
+from mtconnect.api_client import ApiClient
+from mtconnect.configuration import Configuration
 # import models into sdk package

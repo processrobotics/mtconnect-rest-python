@@ -17,7 +17,7 @@ import re  # noqa: F401
 # python 2 and python 3 compatibility library
 import six
 
-from cppagent.api_client import ApiClient
+from mtconnect.api_client import ApiClient
 
 
 class DefaultApi(object):
