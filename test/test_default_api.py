@@ -14,9 +14,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import cppagent
-from cppagent.api.default_api import DefaultApi  # noqa: E501
-from cppagent.rest import ApiException
+import mtconnect
+from mtconnect.api.default_api import DefaultApi  # noqa: E501
+from mtconnect.rest import ApiException
 
 
 class TestDefaultApi(unittest.TestCase):
@@ -278,6 +278,17 @@ class TestDefaultApi(unittest.TestCase):
 
         MTConnect probe request  # noqa: E501
         """
+        
+        # create an instance of the API class
+        api_instance = mtconnect.DefaultApi()
+        device_type = 'device_type_example' # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
+        pretty = False # bool | Instructs the result to be pretty printed (optional) (default to false)
+
+        try:
+            # MTConnect probe request
+            api_instance.probe_get(device_type=device_type, pretty=pretty)
+        except ApiException as e:
+            print("Exception when calling DefaultApi->probe_get: %s\n" % e)
         pass
 
     def test_root_get(self):
@@ -296,4 +307,6 @@ class TestDefaultApi(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    test = TestDefaultApi()
+    test.test_probe_get()
+    # unittest.main()

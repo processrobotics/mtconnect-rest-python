@@ -1,6 +1,6 @@
 # mtconnect.DefaultApi
 
-All URIs are relative to *http://172.18.0.4:5000/*
+All URIs are relative to *http://172.19.0.2:5000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -44,7 +44,7 @@ Method | HTTP request | Description
 [**sample_get**](DefaultApi.md#sample_get) | **GET** /sample | MTConnect sample request
 
 # **asset_asset_id_delete**
-> asset_asset_id_delete(asset_id)
+> object asset_asset_id_delete(asset_id)
 
 Delete asset identified by `assetId`
 
@@ -64,7 +64,8 @@ asset_id = 'asset_id_example' # str | An assetId to select
 
 try:
     # Delete asset identified by `assetId`
-    api_instance.asset_asset_id_delete(asset_id)
+    api_response = api_instance.asset_asset_id_delete(asset_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_asset_id_delete: %s\n" % e)
 ```
@@ -77,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -86,12 +87,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_asset_id_post**
-> asset_asset_id_post(asset_id, device=device, type=type)
+> object asset_asset_id_post(asset_id, device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -113,7 +114,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.asset_asset_id_post(asset_id, device=device, type=type)
+    api_response = api_instance.asset_asset_id_post(asset_id, device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_asset_id_post: %s\n" % e)
 ```
@@ -128,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -137,12 +139,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_asset_id_put**
-> asset_asset_id_put(asset_id, device=device, type=type)
+> object asset_asset_id_put(asset_id, device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -164,7 +166,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.asset_asset_id_put(asset_id, device=device, type=type)
+    api_response = api_instance.asset_asset_id_put(asset_id, device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_asset_id_put: %s\n" % e)
 ```
@@ -179,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -188,12 +191,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_asset_ids_get**
-> asset_asset_ids_get(asset_ids)
+> object asset_asset_ids_get(asset_ids)
 
 MTConnect asset request
 
@@ -213,7 +216,8 @@ asset_ids = 'asset_ids_example' # str | Semi-colon (;) separated list of assetId
 
 try:
     # MTConnect asset request
-    api_instance.asset_asset_ids_get(asset_ids)
+    api_response = api_instance.asset_asset_ids_get(asset_ids)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_asset_ids_get: %s\n" % e)
 ```
@@ -226,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -235,12 +239,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_delete**
-> asset_delete(device=device, type=type)
+> object asset_delete(device=device, type=type)
 
 Delete all assets for a device and type
 
@@ -261,7 +265,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Delete all assets for a device and type
-    api_instance.asset_delete(device=device, type=type)
+    api_response = api_instance.asset_delete(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_delete: %s\n" % e)
 ```
@@ -275,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -284,12 +289,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_get**
-> asset_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+> object asset_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
 
 MTConnect asset request
 
@@ -313,7 +318,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # MTConnect asset request
-    api_instance.asset_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+    api_response = api_instance.asset_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_get: %s\n" % e)
 ```
@@ -330,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -339,12 +345,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_post**
-> asset_post(device=device, type=type)
+> object asset_post(device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -365,7 +371,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.asset_post(device=device, type=type)
+    api_response = api_instance.asset_post(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_post: %s\n" % e)
 ```
@@ -379,7 +386,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -388,12 +395,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **asset_put**
-> asset_put(device=device, type=type)
+> object asset_put(device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -414,7 +421,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.asset_put(device=device, type=type)
+    api_response = api_instance.asset_put(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->asset_put: %s\n" % e)
 ```
@@ -428,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -437,12 +445,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_asset_id_delete**
-> assets_asset_id_delete(asset_id)
+> object assets_asset_id_delete(asset_id)
 
 Delete asset identified by `assetId`
 
@@ -462,7 +470,8 @@ asset_id = 'asset_id_example' # str | An assetId to select
 
 try:
     # Delete asset identified by `assetId`
-    api_instance.assets_asset_id_delete(asset_id)
+    api_response = api_instance.assets_asset_id_delete(asset_id)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_asset_id_delete: %s\n" % e)
 ```
@@ -475,7 +484,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -484,12 +493,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_asset_id_post**
-> assets_asset_id_post(asset_id, device=device, type=type)
+> object assets_asset_id_post(asset_id, device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -511,7 +520,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.assets_asset_id_post(asset_id, device=device, type=type)
+    api_response = api_instance.assets_asset_id_post(asset_id, device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_asset_id_post: %s\n" % e)
 ```
@@ -526,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -535,12 +545,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_asset_id_put**
-> assets_asset_id_put(asset_id, device=device, type=type)
+> object assets_asset_id_put(asset_id, device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -562,7 +572,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.assets_asset_id_put(asset_id, device=device, type=type)
+    api_response = api_instance.assets_asset_id_put(asset_id, device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_asset_id_put: %s\n" % e)
 ```
@@ -577,7 +588,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -586,12 +597,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_asset_ids_get**
-> assets_asset_ids_get(asset_ids)
+> object assets_asset_ids_get(asset_ids)
 
 MTConnect assets request
 
@@ -611,7 +622,8 @@ asset_ids = 'asset_ids_example' # str | Semi-colon (;) separated list of assetId
 
 try:
     # MTConnect assets request
-    api_instance.assets_asset_ids_get(asset_ids)
+    api_response = api_instance.assets_asset_ids_get(asset_ids)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_asset_ids_get: %s\n" % e)
 ```
@@ -624,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -633,12 +645,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_delete**
-> assets_delete(device=device, type=type)
+> object assets_delete(device=device, type=type)
 
 Delete all assets for a device and type
 
@@ -659,7 +671,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Delete all assets for a device and type
-    api_instance.assets_delete(device=device, type=type)
+    api_response = api_instance.assets_delete(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_delete: %s\n" % e)
 ```
@@ -673,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -682,12 +695,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_get**
-> assets_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+> object assets_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
 
 MTConnect assets request
 
@@ -711,7 +724,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # MTConnect assets request
-    api_instance.assets_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+    api_response = api_instance.assets_get(count=count, device=device, pretty=pretty, removed=removed, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_get: %s\n" % e)
 ```
@@ -728,7 +742,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -737,12 +751,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_post**
-> assets_post(device=device, type=type)
+> object assets_post(device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -763,7 +777,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.assets_post(device=device, type=type)
+    api_response = api_instance.assets_post(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_post: %s\n" % e)
 ```
@@ -777,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -786,12 +801,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assets_put**
-> assets_put(device=device, type=type)
+> object assets_put(device=device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -812,7 +827,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.assets_put(device=device, type=type)
+    api_response = api_instance.assets_put(device=device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->assets_put: %s\n" % e)
 ```
@@ -826,7 +842,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -835,12 +851,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **current_get**
-> current_get(at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+> object current_get(at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
 
 MTConnect current request
 
@@ -864,7 +880,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect current request
-    api_instance.current_get(at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+    api_response = api_instance.current_get(at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->current_get: %s\n" % e)
 ```
@@ -881,7 +898,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -890,12 +907,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_asset_id_post**
-> device_asset_asset_id_post(device, asset_id, type=type)
+> object device_asset_asset_id_post(device, asset_id, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -917,7 +934,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_asset_asset_id_post(device, asset_id, type=type)
+    api_response = api_instance.device_asset_asset_id_post(device, asset_id, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_asset_id_post: %s\n" % e)
 ```
@@ -932,7 +950,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -941,12 +959,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_asset_id_put**
-> device_asset_asset_id_put(device, asset_id, type=type)
+> object device_asset_asset_id_put(device, asset_id, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -968,7 +986,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_asset_asset_id_put(device, asset_id, type=type)
+    api_response = api_instance.device_asset_asset_id_put(device, asset_id, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_asset_id_put: %s\n" % e)
 ```
@@ -983,7 +1002,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -992,12 +1011,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_delete**
-> device_asset_delete(device, type=type)
+> object device_asset_delete(device, type=type)
 
 Delete all assets for a device and type
 
@@ -1018,7 +1037,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Delete all assets for a device and type
-    api_instance.device_asset_delete(device, type=type)
+    api_response = api_instance.device_asset_delete(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_delete: %s\n" % e)
 ```
@@ -1032,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1041,12 +1061,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_get**
-> device_asset_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+> object device_asset_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
 
 MTConnect asset request
 
@@ -1071,7 +1091,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # MTConnect asset request
-    api_instance.device_asset_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+    api_response = api_instance.device_asset_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_get: %s\n" % e)
 ```
@@ -1089,7 +1110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1098,12 +1119,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_post**
-> device_asset_post(device, type=type)
+> object device_asset_post(device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1124,7 +1145,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_asset_post(device, type=type)
+    api_response = api_instance.device_asset_post(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_post: %s\n" % e)
 ```
@@ -1138,7 +1160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1147,12 +1169,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_asset_put**
-> device_asset_put(device, type=type)
+> object device_asset_put(device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1173,7 +1195,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_asset_put(device, type=type)
+    api_response = api_instance.device_asset_put(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_asset_put: %s\n" % e)
 ```
@@ -1187,7 +1210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1196,12 +1219,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_asset_id_post**
-> device_assets_asset_id_post(device, asset_id, type=type)
+> object device_assets_asset_id_post(device, asset_id, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1223,7 +1246,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_assets_asset_id_post(device, asset_id, type=type)
+    api_response = api_instance.device_assets_asset_id_post(device, asset_id, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_asset_id_post: %s\n" % e)
 ```
@@ -1238,7 +1262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1247,12 +1271,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_asset_id_put**
-> device_assets_asset_id_put(device, asset_id, type=type)
+> object device_assets_asset_id_put(device, asset_id, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1274,7 +1298,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_assets_asset_id_put(device, asset_id, type=type)
+    api_response = api_instance.device_assets_asset_id_put(device, asset_id, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_asset_id_put: %s\n" % e)
 ```
@@ -1289,7 +1314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1298,12 +1323,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_delete**
-> device_assets_delete(device, type=type)
+> object device_assets_delete(device, type=type)
 
 Delete all assets for a device and type
 
@@ -1324,7 +1349,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Delete all assets for a device and type
-    api_instance.device_assets_delete(device, type=type)
+    api_response = api_instance.device_assets_delete(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_delete: %s\n" % e)
 ```
@@ -1338,7 +1364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1347,12 +1373,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_get**
-> device_assets_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+> object device_assets_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
 
 MTConnect assets request
 
@@ -1377,7 +1403,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # MTConnect assets request
-    api_instance.device_assets_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+    api_response = api_instance.device_assets_get(device, count=count, device=device, pretty=pretty, removed=removed, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_get: %s\n" % e)
 ```
@@ -1395,7 +1422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1404,12 +1431,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_post**
-> device_assets_post(device, type=type)
+> object device_assets_post(device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1430,7 +1457,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_assets_post(device, type=type)
+    api_response = api_instance.device_assets_post(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_post: %s\n" % e)
 ```
@@ -1444,7 +1472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1453,12 +1481,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_assets_put**
-> device_assets_put(device, type=type)
+> object device_assets_put(device, type=type)
 
 Upload an asset by identified by `assetId`
 
@@ -1479,7 +1507,8 @@ type = 'type_example' # str | Only include assets of type `type` in the results 
 
 try:
     # Upload an asset by identified by `assetId`
-    api_instance.device_assets_put(device, type=type)
+    api_response = api_instance.device_assets_put(device, type=type)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_assets_put: %s\n" % e)
 ```
@@ -1493,7 +1522,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1502,12 +1531,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_current_get**
-> device_current_get(device, at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+> object device_current_get(device, at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
 
 MTConnect current request
 
@@ -1532,7 +1561,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect current request
-    api_instance.device_current_get(device, at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+    api_response = api_instance.device_current_get(device, at=at, device_type=device_type, interval=interval, path=path, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_current_get: %s\n" % e)
 ```
@@ -1550,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1559,12 +1589,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_get**
-> device_get(device, device_type=device_type, pretty=pretty)
+> object device_get(device, device_type=device_type, pretty=pretty)
 
 MTConnect probe request
 
@@ -1586,7 +1616,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect probe request
-    api_instance.device_get(device, device_type=device_type, pretty=pretty)
+    api_response = api_instance.device_get(device, device_type=device_type, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_get: %s\n" % e)
 ```
@@ -1601,7 +1632,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1610,12 +1641,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_post**
-> device_post(device, time=time)
+> object device_post(device, time=time)
 
 Non-normative POST to update a value in the agent
 
@@ -1636,7 +1667,8 @@ time = 'time_example' # str |  (optional)
 
 try:
     # Non-normative POST to update a value in the agent
-    api_instance.device_post(device, time=time)
+    api_response = api_instance.device_post(device, time=time)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_post: %s\n" % e)
 ```
@@ -1650,7 +1682,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1659,12 +1691,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_probe_get**
-> device_probe_get(device, device_type=device_type, pretty=pretty)
+> object device_probe_get(device, device_type=device_type, pretty=pretty)
 
 MTConnect probe request
 
@@ -1686,7 +1718,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect probe request
-    api_instance.device_probe_get(device, device_type=device_type, pretty=pretty)
+    api_response = api_instance.device_probe_get(device, device_type=device_type, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_probe_get: %s\n" % e)
 ```
@@ -1701,7 +1734,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1710,12 +1743,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_put**
-> device_put(device, time=time)
+> object device_put(device, time=time)
 
 Non-normative PUT to update a value in the agent
 
@@ -1736,7 +1769,8 @@ time = 'time_example' # str |  (optional)
 
 try:
     # Non-normative PUT to update a value in the agent
-    api_instance.device_put(device, time=time)
+    api_response = api_instance.device_put(device, time=time)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_put: %s\n" % e)
 ```
@@ -1750,7 +1784,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1759,12 +1793,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **device_sample_get**
-> device_sample_get(device, count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+> object device_sample_get(device, count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
 
 MTConnect sample request
 
@@ -1792,7 +1826,8 @@ to = 56 # int | Sequence number at to stop reporting observations (optional)
 
 try:
     # MTConnect sample request
-    api_instance.device_sample_get(device, count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+    api_response = api_instance.device_sample_get(device, count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->device_sample_get: %s\n" % e)
 ```
@@ -1813,7 +1848,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1822,12 +1857,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **probe_get**
-> probe_get(device_type=device_type, pretty=pretty)
+> object probe_get(device_type=device_type, pretty=pretty)
 
 MTConnect probe request
 
@@ -1848,7 +1883,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect probe request
-    api_instance.probe_get(device_type=device_type, pretty=pretty)
+    api_response = api_instance.probe_get(device_type=device_type, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->probe_get: %s\n" % e)
 ```
@@ -1862,7 +1898,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1871,12 +1907,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **root_get**
-> root_get(device_type=device_type, pretty=pretty)
+> object root_get(device_type=device_type, pretty=pretty)
 
 MTConnect probe request
 
@@ -1897,7 +1933,8 @@ pretty = false # bool | Instructs the result to be pretty printed (optional) (de
 
 try:
     # MTConnect probe request
-    api_instance.root_get(device_type=device_type, pretty=pretty)
+    api_response = api_instance.root_get(device_type=device_type, pretty=pretty)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->root_get: %s\n" % e)
 ```
@@ -1911,7 +1948,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1920,12 +1957,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sample_get**
-> sample_get(count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+> object sample_get(count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
 
 MTConnect sample request
 
@@ -1952,7 +1989,8 @@ to = 56 # int | Sequence number at to stop reporting observations (optional)
 
 try:
     # MTConnect sample request
-    api_instance.sample_get(count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+    api_response = api_instance.sample_get(count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling DefaultApi->sample_get: %s\n" % e)
 ```
@@ -1972,7 +2010,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -1981,7 +2019,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

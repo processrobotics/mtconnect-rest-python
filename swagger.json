@@ -1,1 +1,1928 @@
-{"openapi":"3.0.0","info":{"title":"MTConnect – REST API","description":"MTConnect REST API ","contact":{"email":"will@metalogi.io"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"},"version":"MTConnect Agent Version 2.4.0.7"},"externalDocs":{"description":"For information related to MTConnect","url":"http://mtconnect.org"},"servers":[{"url":"http://172.18.0.4:5000/"}],"paths":{"/":{"get":{"summary":"MTConnect probe request","description":"Provides metadata service for the MTConnect Devices information model for all devices.","parameters":[{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}}},"/asset":{"get":{"summary":"MTConnect asset request","description":"Returns up to `count` assets","parameters":[{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"removed","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Boolean indicating if removed assets are included in results"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete all assets for a device and type","description":"Device and type are optional. If they are not given, it assumes there is no constraint","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/asset/{assetIds}":{"get":{"summary":"MTConnect asset request","description":"Returns a set of assets identified by asset ids `asset` separated by semi-colon (;)","parameters":[{"name":"assetIds","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Semi-colon (;) separated list of assetIds"}],"responses":{"200":{"description":"OK"}}}},"/asset/{assetId}":{"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete asset identified by `assetId`","description":"Marks the asset as removed and creates an AssetRemoved event","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"}],"responses":{"200":{"description":"OK"}}}},"/assets":{"get":{"summary":"MTConnect assets request","description":"Returns up to `count` assets","parameters":[{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"removed","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Boolean indicating if removed assets are included in results"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete all assets for a device and type","description":"Device and type are optional. If they are not given, it assumes there is no constraint","parameters":[{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/assets/{assetIds}":{"get":{"summary":"MTConnect assets request","description":"Returns a set assets identified by asset ids `asset` separated by semi-colon (;)","parameters":[{"name":"assetIds","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Semi-colon (;) separated list of assetIds"}],"responses":{"200":{"description":"OK"}}}},"/assets/{assetId}":{"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete asset identified by `assetId`","description":"Marks the asset as removed and creates an AssetRemoved event","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"}],"responses":{"200":{"description":"OK"}}}},"/current":{"get":{"summary":"MTConnect current request","description":"Gets a stapshot of the state of all the observations for all devices optionally filtered by the `path`","parameters":[{"name":"at","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at which the observation snapshot is taken"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"interval","in":"query","required":false,"schema":{"type":"integer","format":"int64"},"description":"Time in ms between publishing data–starts streaming"},{"name":"path","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"XPath to filter DataItems matched against the probe document"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}}},"/probe":{"get":{"summary":"MTConnect probe request","description":"Provides metadata service for the MTConnect Devices information model for all devices.","parameters":[{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}}},"/sample":{"get":{"summary":"MTConnect sample request","description":"Gets a time series of at maximum `count` observations for all devices optionally filtered by the `path` and starting at `from`. By default, from is the first available observation known to the agent","parameters":[{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"from","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at to start reporting observations"},{"name":"heartbeat","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":10000},"description":"Time in ms between publishing a empty document when no data has changed"},{"name":"interval","in":"query","required":false,"schema":{"type":"integer","format":"int64"},"description":"Time in ms between publishing data–starts streaming"},{"name":"path","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"XPath to filter DataItems matched against the probe document"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"to","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at to stop reporting observations"}],"responses":{"200":{"description":"OK"}}}},"/{device}":{"get":{"summary":"MTConnect probe request","description":"Provides metadata service for the MTConnect Devices information model for device identified by `device` matching `name` or `uuid`.","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}},"put":{"summary":"Non-normative PUT to update a value in the agent","description":"The data of the PUT contains the dataItem=value observation data","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"time","in":"query","required":false,"schema":{"type":"string","format":"string"}}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Non-normative POST to update a value in the agent","description":"The data of the POST contains the dataItem=value observation data","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"time","in":"query","required":false,"schema":{"type":"string","format":"string"}}],"responses":{"200":{"description":"OK"}}}},"/{device}/asset":{"get":{"summary":"MTConnect asset request","description":"Returns up to `count` assets for deivce `device`","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"removed","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Boolean indicating if removed assets are included in results"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete all assets for a device and type","description":"Device and type are optional. If they are not given, it assumes there is no constraint","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/{device}/asset/{assetId}":{"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/{device}/assets":{"get":{"summary":"MTConnect assets request","description":"Returns up to `count` assets for deivce `device`","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"device","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"removed","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Boolean indicating if removed assets are included in results"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"delete":{"summary":"Delete all assets for a device and type","description":"Device and type are optional. If they are not given, it assumes there is no constraint","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/{device}/assets/{assetId}":{"put":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}},"post":{"summary":"Upload an asset by identified by `assetId`","description":"Updates or adds an asset with the asset XML in the body","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"assetId","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"An assetId to select"},{"name":"type","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Only include assets of type `type` in the results"}],"responses":{"200":{"description":"OK"}}}},"/{device}/current":{"get":{"summary":"MTConnect current request","description":"Gets a stapshot of the state of all the observations for device `device` optionally filtered by the `path`","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"at","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at which the observation snapshot is taken"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"interval","in":"query","required":false,"schema":{"type":"integer","format":"int64"},"description":"Time in ms between publishing data–starts streaming"},{"name":"path","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"XPath to filter DataItems matched against the probe document"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}}},"/{device}/probe":{"get":{"summary":"MTConnect probe request","description":"Provides metadata service for the MTConnect Devices information model for device identified by `device` matching `name` or `uuid`.","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"}],"responses":{"200":{"description":"OK"}}}},"/{device}/sample":{"get":{"summary":"MTConnect sample request","description":"Gets a time series of at maximum `count` observations for device `device` optionally filtered by the `path` and starting at `from`. By default, from is the first available observation known to the agent","parameters":[{"name":"device","in":"path","required":true,"schema":{"type":"string","format":"string"},"description":"Device UUID or name"},{"name":"count","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":100},"description":"Maximum number of entities to include in results"},{"name":"deviceType","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"Values are 'Device' or 'Agent'. Selects only devices of that type."},{"name":"from","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at to start reporting observations"},{"name":"heartbeat","in":"query","required":false,"schema":{"type":"integer","format":"int64","default":10000},"description":"Time in ms between publishing a empty document when no data has changed"},{"name":"interval","in":"query","required":false,"schema":{"type":"integer","format":"int64"},"description":"Time in ms between publishing data–starts streaming"},{"name":"path","in":"query","required":false,"schema":{"type":"string","format":"string"},"description":"XPath to filter DataItems matched against the probe document"},{"name":"pretty","in":"query","required":false,"schema":{"type":"boolean","format":"bool","default":false},"description":"Instructs the result to be pretty printed"},{"name":"to","in":"query","required":false,"schema":{"type":"integer","format":"uint64"},"description":"Sequence number at to stop reporting observations"}],"responses":{"200":{"description":"OK"}}}}}}
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "MTConnect – REST API",
+		"description": "MTConnect REST API ",
+		"contact": {
+			"email": "will@metalogi.io"
+		},
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		},
+		"version": "MTConnect Agent Version 2.4.0.8"
+	},
+	"externalDocs": {
+		"description": "For information related to MTConnect",
+		"url": "http://mtconnect.org"
+	},
+	"servers": [
+		{
+			"url": "http://172.19.0.2:5000/"
+		}
+	],
+	"paths": {
+		"/": {
+			"get": {
+				"summary": "MTConnect probe request",
+				"description": "Provides metadata service for the MTConnect Devices information model for all devices.",
+				"parameters": [
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/asset": {
+			"get": {
+				"summary": "MTConnect asset request",
+				"description": "Returns up to `count` assets",
+				"parameters": [
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "removed",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Boolean indicating if removed assets are included in results"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete all assets for a device and type",
+				"description": "Device and type are optional. If they are not given, it assumes there is no constraint",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/asset/{assetIds}": {
+			"get": {
+				"summary": "MTConnect asset request",
+				"description": "Returns a set of assets identified by asset ids `asset` separated by semi-colon (;)",
+				"parameters": [
+					{
+						"name": "assetIds",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Semi-colon (;) separated list of assetIds"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/asset/{assetId}": {
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete asset identified by `assetId`",
+				"description": "Marks the asset as removed and creates an AssetRemoved event",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/assets": {
+			"get": {
+				"summary": "MTConnect assets request",
+				"description": "Returns up to `count` assets",
+				"parameters": [
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "removed",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Boolean indicating if removed assets are included in results"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete all assets for a device and type",
+				"description": "Device and type are optional. If they are not given, it assumes there is no constraint",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/assets/{assetIds}": {
+			"get": {
+				"summary": "MTConnect assets request",
+				"description": "Returns a set assets identified by asset ids `asset` separated by semi-colon (;)",
+				"parameters": [
+					{
+						"name": "assetIds",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Semi-colon (;) separated list of assetIds"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/assets/{assetId}": {
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete asset identified by `assetId`",
+				"description": "Marks the asset as removed and creates an AssetRemoved event",
+				"parameters": [
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/current": {
+			"get": {
+				"summary": "MTConnect current request",
+				"description": "Gets a stapshot of the state of all the observations for all devices optionally filtered by the `path`",
+				"parameters": [
+					{
+						"name": "at",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at which the observation snapshot is taken"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"description": "Time in ms between publishing data–starts streaming"
+					},
+					{
+						"name": "path",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "XPath to filter DataItems matched against the probe document"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/probe": {
+			"get": {
+				"summary": "MTConnect probe request",
+				"description": "Provides metadata service for the MTConnect Devices information model for all devices.",
+				"parameters": [
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/sample": {
+			"get": {
+				"summary": "MTConnect sample request",
+				"description": "Gets a time series of at maximum `count` observations for all devices optionally filtered by the `path` and starting at `from`. By default, from is the first available observation known to the agent",
+				"parameters": [
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "from",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at to start reporting observations"
+					},
+					{
+						"name": "heartbeat",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 10000
+						},
+						"description": "Time in ms between publishing a empty document when no data has changed"
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"description": "Time in ms between publishing data–starts streaming"
+					},
+					{
+						"name": "path",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "XPath to filter DataItems matched against the probe document"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "to",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at to stop reporting observations"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}": {
+			"get": {
+				"summary": "MTConnect probe request",
+				"description": "Provides metadata service for the MTConnect Devices information model for device identified by `device` matching `name` or `uuid`.",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"summary": "Non-normative PUT to update a value in the agent",
+				"description": "The data of the PUT contains the dataItem=value observation data",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "time",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Non-normative POST to update a value in the agent",
+				"description": "The data of the POST contains the dataItem=value observation data",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "time",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/asset": {
+			"get": {
+				"summary": "MTConnect asset request",
+				"description": "Returns up to `count` assets for deivce `device`",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "removed",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Boolean indicating if removed assets are included in results"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete all assets for a device and type",
+				"description": "Device and type are optional. If they are not given, it assumes there is no constraint",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/asset/{assetId}": {
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/assets": {
+			"get": {
+				"summary": "MTConnect assets request",
+				"description": "Returns up to `count` assets for deivce `device`",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "device",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "removed",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Boolean indicating if removed assets are included in results"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"summary": "Delete all assets for a device and type",
+				"description": "Device and type are optional. If they are not given, it assumes there is no constraint",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/assets/{assetId}": {
+			"put": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"summary": "Upload an asset by identified by `assetId`",
+				"description": "Updates or adds an asset with the asset XML in the body",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "assetId",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "An assetId to select"
+					},
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Only include assets of type `type` in the results"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/current": {
+			"get": {
+				"summary": "MTConnect current request",
+				"description": "Gets a stapshot of the state of all the observations for device `device` optionally filtered by the `path`",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "at",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at which the observation snapshot is taken"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"description": "Time in ms between publishing data–starts streaming"
+					},
+					{
+						"name": "path",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "XPath to filter DataItems matched against the probe document"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/probe": {
+			"get": {
+				"summary": "MTConnect probe request",
+				"description": "Provides metadata service for the MTConnect Devices information model for device identified by `device` matching `name` or `uuid`.",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/{device}/sample": {
+			"get": {
+				"summary": "MTConnect sample request",
+				"description": "Gets a time series of at maximum `count` observations for device `device` optionally filtered by the `path` and starting at `from`. By default, from is the first available observation known to the agent",
+				"parameters": [
+					{
+						"name": "device",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Device UUID or name"
+					},
+					{
+						"name": "count",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 100
+						},
+						"description": "Maximum number of entities to include in results"
+					},
+					{
+						"name": "deviceType",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "Values are 'Device' or 'Agent'. Selects only devices of that type."
+					},
+					{
+						"name": "from",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at to start reporting observations"
+					},
+					{
+						"name": "heartbeat",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64",
+							"default": 10000
+						},
+						"description": "Time in ms between publishing a empty document when no data has changed"
+					},
+					{
+						"name": "interval",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						},
+						"description": "Time in ms between publishing data–starts streaming"
+					},
+					{
+						"name": "path",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "string"
+						},
+						"description": "XPath to filter DataItems matched against the probe document"
+					},
+					{
+						"name": "pretty",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "boolean",
+							"format": "bool",
+							"default": false
+						},
+						"description": "Instructs the result to be pretty printed"
+					},
+					{
+						"name": "to",
+						"in": "query",
+						"required": false,
+						"schema": {
+							"type": "integer",
+							"format": "uint64"
+						},
+						"description": "Sequence number at to stop reporting observations"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"text/plain": {
+								"schema": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
