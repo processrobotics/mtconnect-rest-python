@@ -1,0 +1,43 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Get version from setup.py
+        id: get_version
+        run: |
+          VERSION=$(python -c "from setuptools import setup; setup()" --dry-run 2>&1 | grep -oP "version='\K[^']*")
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Get API version from swagger.json
+        id: get_api_version
+        run: |
+          API_VERSION=$(jq -r '.info.version' swagger.json)
+          echo "API_VERSION=$API_VERSION" >> $GITHUB_ENV
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
+          body: |
+            Release version: ${{ env.VERSION }}
+            API version: ${{ env.API_VERSION }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

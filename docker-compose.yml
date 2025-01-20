@@ -6,4 +6,4 @@ services:
     volumes:
       - ${PWD}:/local
     # command: ls -la
-    command: generate -i /local/swagger.json -l python -o /local -DpackageName=mtconnect
+    command: generate -i /local/swagger.json -l python -c /local/config.json

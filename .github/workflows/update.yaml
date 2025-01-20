@@ -1,0 +1,51 @@
+name: Update API Client
+
+on:
+  registry_package:
+    types: [published]
+    package_name: your-docker-image-name  # Replace with your Docker image name
+
+jobs:
+  update-client:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Pull and run Docker image
+        run: |
+          docker pull ${{ github.event.registry.image_url }}
+          docker run -d -p 5000:5000 --name api-server ${{ github.event.registry.image_url }}
+          sleep 10  # Wait for server to start
+
+      - name: Fetch Swagger specification
+        run: |
+          curl http://localhost:5000/swagger -o swagger.json
+
+      - name: Generate Python client
+        run: |
+          docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli-v3 generate \
+            -i /local/swagger.json \
+            -l python \
+            -c /local/config.json
+
+      - name: Create new branch
+        run: |
+          BRANCH_NAME="update-client-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update Python client from latest API specification"
+          git push origin $BRANCH_NAME
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: "Update Python client from latest API specification"
+          body: "Automatically generated PR to update Python client based on latest API specification"
+          branch: ${{ env.BRANCH_NAME }}
+          base: main
+          labels: automated-pr,client-update

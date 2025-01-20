@@ -15,7 +15,7 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from mtconnect.api.default_api import DefaultApi
+from mtconnect.rest_api.default_api import DefaultApi
 # import ApiClient
 from mtconnect.api_client import ApiClient
 from mtconnect.configuration import Configuration
