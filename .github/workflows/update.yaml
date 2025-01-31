@@ -14,7 +14,7 @@ jobs:
       - name: Pull and run Docker image
         run: |
           docker pull mtconnect/agent:latest
-          docker run --network host -v ./.github/workflows/agent:/home/agent mtconnect/agent:latest mtcagent run agent.json
+          docker run -d --network host -v ./.github/workflows/agent:/home/agent mtconnect/agent:latest mtcagent run agent.json
           timeout=90
           start_time=$(date +%s)
           echo "Waiting for server to start. Will try every 10s until valid response or timeout of $timeout seconds"
