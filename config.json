@@ -1,6 +1,7 @@
 {
 	"packageName": "mtconnect",
 	"apiPackage": "rest_api",
+	"packageVersion": "0.0.1",
 	"additionalProperties": {
 		"excludeFiles": [
 			"git_push.sh",
