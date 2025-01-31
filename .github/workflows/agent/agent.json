@@ -20,5 +20,9 @@
 	},
 	"DevicesStyle": {
 		"Location": "/styles/styles.xsl"
+	},
+	"logger_config": {
+		"logging_level": "debug",
+		"output": "cout"
 	}
 }
