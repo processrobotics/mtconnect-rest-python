@@ -67,3 +67,4 @@ target/
 .vscode/
 .build/
 .swagger-codegen/
+.bash_history
