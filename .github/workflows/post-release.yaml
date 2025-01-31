@@ -20,7 +20,7 @@ jobs:
       - name: Get version from setup.py
         id: get_version
         run: |
-          VERSION=$(python -c "from setuptools import setup; setup()" --dry-run 2>&1 | grep -oP "version='\K[^']*")
+          VERSION=$(python -c "from setuptools import setup; setup()" --dry-run 2>&1 | grep -oP "VERSION='\K[^']*")
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Get API version from swagger.json

@@ -1,9 +1,7 @@
 name: Update API Client
 
 on:
-  registry_package:
-    types: [published]
-    package_name: your-docker-image-name  # Replace with your Docker image name
+  workflow_dispatch:
 
 jobs:
   update-client:
@@ -15,9 +13,28 @@ jobs:
 
       - name: Pull and run Docker image
         run: |
-          docker pull ${{ github.event.registry.image_url }}
-          docker run -d -p 5000:5000 --name api-server ${{ github.event.registry.image_url }}
-          sleep 10  # Wait for server to start
+          docker pull mtconnect/agent:latest
+          docker run -d -p 5000:5000 mtconnect/agent:latest
+          timeout=90
+          start_time=$(date +%s)
+          echo "Waiting for server to start. Will try every 10s until valid response or timeout of $timeout seconds"
+          while true; do
+            echo "Checking if agent is up..."
+            if curl -s http://localhost:5000 > /dev/null; then
+              echo "Agent is up"
+              break
+            else
+              echo "No response from agent (yet)"
+            fi
+            current_time=$(date +%s)
+            elapsed=$((current_time - start_time))
+            if [ $elapsed -ge $timeout ]; then
+              echo "Timeout waiting for server; giving up"
+              exit 1
+            fi
+            echo "Waiting 10s before trying again"
+            sleep 10
+          done
 
       - name: Fetch Swagger specification
         run: |
