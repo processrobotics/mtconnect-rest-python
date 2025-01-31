@@ -3,6 +3,10 @@ name: Update API Client
 on:
   workflow_dispatch:
 
+permissions:                    # Global permissions configuration starts here
+  contents: write               # 'read' access to repository contents
+  pull-requests: write          # 'write' access to pull requests
+
 jobs:
   update-client:
     runs-on: ubuntu-latest
