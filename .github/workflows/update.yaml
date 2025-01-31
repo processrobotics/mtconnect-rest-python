@@ -62,7 +62,18 @@ jobs:
           git commit -m "Update Python client from latest API specification"
           git push origin $BRANCH_NAME
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
-
+          # Debug info
+          echo "Branch created with changes:"
+          git show --stat
+      - name: Verify branch exists
+        run: |
+          git fetch origin
+          if git show-ref --verify --quiet refs/remotes/origin/${{ env.BRANCH_NAME }}; then
+            echo "Branch exists on remote"
+          else
+            echo "Error: Branch not found on remote"
+            exit 1
+          fi
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
@@ -71,3 +82,4 @@ jobs:
           branch: ${{ env.BRANCH_NAME }}
           base: main
           labels: automated-pr,client-update
+          delete-branch: false
