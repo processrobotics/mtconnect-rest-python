@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MTConnectDevices xmlns="urn:mtconnect.org:MTConnectDevices:2.4"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:mtconnect.org:MTConnectDevices:2.4 https://schemas.mtconnect.org/schemas/MTConnectDevices_2.4.xsd">
+	<Devices>
+		<Device id="dev1" name="VMC-3Axis" uuid="00000000-0000-0000-0000-000000000001"/>
+    </Devices>
+</MTConnectDevices>

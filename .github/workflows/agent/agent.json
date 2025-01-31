@@ -1,0 +1,24 @@
+{
+	"Devices": "devices.xml",
+	"DataPath": "/mtconnect/data",
+	"Files": {
+		"schemas": {
+			"Path": "schemas",
+			"Location": "/schemas/"
+		},
+		"styles": {
+			"Path": "styles",
+			"Location": "/styles/"
+		},
+		"Favicon": {
+			"Path": "styles/favicon.ico",
+			"Location": "/favicon.ico"
+		}
+	},
+	"StreamsStyle": {
+		"Location": "/styles/styles.xsl"
+	},
+	"DevicesStyle": {
+		"Location": "/styles/styles.xsl"
+	}
+}
