@@ -14,12 +14,13 @@ jobs:
       - name: Pull and run Docker image
         run: |
           docker pull mtconnect/agent:latest
-            docker run -d --network host mtconnect/agent:latest
+          docker run -d --network host mtconnect/agent:latest
           timeout=90
           start_time=$(date +%s)
           echo "Waiting for server to start. Will try every 10s until valid response or timeout of $timeout seconds"
           while true; do
             echo "Checking if agent is up..."
+            docker ps -a
             if curl -s http://localhost:5000 > /dev/null; then
               echo "Agent is up"
               break
