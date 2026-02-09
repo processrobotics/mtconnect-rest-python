@@ -68,3 +68,4 @@ target/
 .build/
 .swagger-codegen/
 .bash_history
+test_stream_demo.py

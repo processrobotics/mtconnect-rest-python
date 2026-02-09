@@ -145,6 +145,20 @@ class TestDefaultApi(unittest.TestCase):
 
         MTConnect current request  # noqa: E501
         """
+        # create an instance of the API class
+        api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
+        at = 56  # int | Sequence number at which the observation snapshot is taken (optional)
+        device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
+        interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
+        path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
+        pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
+
+        try:
+            # MTConnect current request with streaming enabled
+            api_instance.current_get(at=at, device_type=device_type, interval=interval, path=path, pretty=pretty, _preload_content=False)
+        except ApiException as e:
+            print("Exception when calling DefaultApi->current_get: %s\n" % e)
         pass
 
     def test_device_asset_asset_id_post(self):
@@ -236,6 +250,21 @@ class TestDefaultApi(unittest.TestCase):
 
         MTConnect current request  # noqa: E501
         """
+        # create an instance of the API class
+        api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
+        device = 'device_example'  # str | Device UUID or name (required)
+        at = 56  # int | Sequence number at which the observation snapshot is taken (optional)
+        device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
+        interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
+        path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
+        pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
+
+        try:
+            # MTConnect current request with streaming enabled
+            api_instance.device_current_get(device, at=at, device_type=device_type, interval=interval, path=path, pretty=pretty, _preload_content=False)
+        except ApiException as e:
+            print("Exception when calling DefaultApi->device_current_get: %s\n" % e)
         pass
 
     def test_device_get(self):
@@ -271,6 +300,24 @@ class TestDefaultApi(unittest.TestCase):
 
         MTConnect sample request  # noqa: E501
         """
+        # create an instance of the API class
+        api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
+        device = 'device_example'  # str | Device UUID or name (required)
+        count = 100  # int | Maximum number of entities to include in results (optional)
+        device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
+        _from = 0  # int | Sequence number to start reporting observations (optional)
+        heartbeat = 10000  # int | Time in ms between publishing a empty document when no data has changed (optional)
+        interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
+        path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
+        pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
+        to = 1000  # int | Sequence number to stop reporting observations (optional)
+
+        try:
+            # MTConnect sample request with streaming enabled
+            api_instance.device_sample_get(device, count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to, _preload_content=False)
+        except ApiException as e:
+            print("Exception when calling DefaultApi->device_sample_get: %s\n" % e)
         pass
 
     def test_probe_get(self):
@@ -303,6 +350,23 @@ class TestDefaultApi(unittest.TestCase):
 
         MTConnect sample request  # noqa: E501
         """
+        # create an instance of the API class
+        api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
+        count = 100  # int | Maximum number of entities to include in results (optional)
+        device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
+        _from = 0  # int | Sequence number to start reporting observations (optional)
+        heartbeat = 10000  # int | Time in ms between publishing a empty document when no data has changed (optional)
+        interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
+        path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
+        pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
+        to = 1000  # int | Sequence number to stop reporting observations (optional)
+
+        try:
+            # MTConnect sample request with streaming enabled
+            api_instance.sample_get(count=count, device_type=device_type, _from=_from, heartbeat=heartbeat, interval=interval, path=path, pretty=pretty, to=to, _preload_content=False)
+        except ApiException as e:
+            print("Exception when calling DefaultApi->sample_get: %s\n" % e)
         pass
 
 
