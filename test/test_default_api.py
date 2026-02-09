@@ -147,6 +147,7 @@ class TestDefaultApi(unittest.TestCase):
         """
         # create an instance of the API class
         api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
         at = 56  # int | Sequence number at which the observation snapshot is taken (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
         interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
@@ -251,6 +252,7 @@ class TestDefaultApi(unittest.TestCase):
         """
         # create an instance of the API class
         api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
         device = 'device_example'  # str | Device UUID or name (required)
         at = 56  # int | Sequence number at which the observation snapshot is taken (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
@@ -300,6 +302,7 @@ class TestDefaultApi(unittest.TestCase):
         """
         # create an instance of the API class
         api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
         device = 'device_example'  # str | Device UUID or name (required)
         count = 100  # int | Maximum number of entities to include in results (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
@@ -349,6 +352,7 @@ class TestDefaultApi(unittest.TestCase):
         """
         # create an instance of the API class
         api_instance = mtconnect.DefaultApi()
+        api_instance.api_client.configuration.host = "https://demo.mtconnect.org"
         count = 100  # int | Maximum number of entities to include in results (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
         _from = 0  # int | Sequence number to start reporting observations (optional)
