@@ -303,12 +303,12 @@ class TestDefaultApi(unittest.TestCase):
         device = 'device_example'  # str | Device UUID or name (required)
         count = 100  # int | Maximum number of entities to include in results (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
-        _from = 0  # int | Sequence number at to start reporting observations (optional)
+        _from = 0  # int | Sequence number to start reporting observations (optional)
         heartbeat = 10000  # int | Time in ms between publishing a empty document when no data has changed (optional)
         interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
         path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
         pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
-        to = 1000  # int | Sequence number at to stop reporting observations (optional)
+        to = 1000  # int | Sequence number to stop reporting observations (optional)
 
         try:
             # MTConnect sample request with streaming enabled
@@ -351,12 +351,12 @@ class TestDefaultApi(unittest.TestCase):
         api_instance = mtconnect.DefaultApi()
         count = 100  # int | Maximum number of entities to include in results (optional)
         device_type = 'Device'  # str | Values are 'Device' or 'Agent'. Selects only devices of that type. (optional)
-        _from = 0  # int | Sequence number at to start reporting observations (optional)
+        _from = 0  # int | Sequence number to start reporting observations (optional)
         heartbeat = 10000  # int | Time in ms between publishing a empty document when no data has changed (optional)
         interval = 1000  # int | Time in ms between publishing data–starts streaming (optional)
         path = '//DataItem[@type="POSITION"]'  # str | XPath to filter DataItems matched against the probe document (optional)
         pretty = False  # bool | Instructs the result to be pretty printed (optional) (default to false)
-        to = 1000  # int | Sequence number at to stop reporting observations (optional)
+        to = 1000  # int | Sequence number to stop reporting observations (optional)
 
         try:
             # MTConnect sample request with streaming enabled
